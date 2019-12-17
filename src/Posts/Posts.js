@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
+
+import PostItem from '../PostItem/PostItem'
 
 export class Posts extends Component {
     constructor( props ){
@@ -8,45 +10,45 @@ export class Posts extends Component {
         this.state = {
             loading: false,
             posts: [],
-            error: '',
+            
         }
     }
 
     componentDidMount() {
-        const wordPressSiteUrl = 'https://msp.salekhard.org/'
-        this.setState( {loading: true}, () => {
-             axios.get( 'https://msp.salekhard.org//wp-json/wp/v2/posts')
-                .then( res => {
-                    this.setState( {loading: false, posts: res.data})
-                })
-                .catch( error => this.setState( {loading: false, error: error.response.data}))   
-        });
+      
+        
+             axios.get('http://msp.salekhard.org/wp-json/wp/v2/news')
+             .then(res => this.setState({
+                 posts: res.data,
+                 loading: true
+                }))
+             .catch(err => console.log(err));
     }
 
 
 
 
-render () {
-    const {posts} = this.state;
+    render (){
+
+     const {posts} = this.state;
     
-console.log(this.state)
+    
+    if (posts.length) {
+        return (
+            <div className="posts-container">
+                {posts.map(post => (
+                    <PostItem key ={post.id} post={post}/>
+
+                   
+                ))}
+                
+            </div>
+        )
+    }
+    return  <h3>Loading ...</h3>
     
 
-    return (
-        <div>
-            
-            {(posts.lenght) ? (
-                <div className = "posts-container">
-                    { posts.map( post => (
-                        <div key={post.id} >
-                           {post.id} 
-                        </div>
-                    ) )}
-                </div>
-            ) : ''}
 
-</div>
-    )
 }
 }
     
