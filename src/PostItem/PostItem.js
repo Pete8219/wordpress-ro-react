@@ -45,7 +45,7 @@ componentDidMount() {
                 <h4>{title.rendered}</h4>
                 <img src={this.state.imgUrl} alt="111"/>
                 <div> 
-                {renderHTML(excerpt.rendered)}
+                {renderHTML(excerpt.rendered.slice(0,100) + '...')}
                 
                 </div>
                 

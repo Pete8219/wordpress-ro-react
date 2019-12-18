@@ -38,7 +38,7 @@ export class Posts extends Component {
             
             <div className={classes.Posts}>
                 <div>
-            <h2>Новости</h2>
+            
             </div>
                 
                 {posts.map(post => (
