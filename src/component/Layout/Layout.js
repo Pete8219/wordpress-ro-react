@@ -26,10 +26,7 @@ export class Layout extends Component {
                 <Posts>
                     {this.props.children}
                 </Posts>
-                <SideBar>
-                    {this.props.children}
-                
-                </SideBar>
+             
                 
                 
             </div>

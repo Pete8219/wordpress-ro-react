@@ -29,7 +29,7 @@ export class Posts extends Component {
 
 
     render (){
-        console.log(this.state)
+        
      const {posts} = this.state;
     
     

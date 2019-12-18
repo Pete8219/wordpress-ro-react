@@ -3,6 +3,8 @@ import axios from 'axios'
 import renderHTML from 'react-render-html'
 import propTypes from 'prop-types'
 import classes from './PostItem.module.css'
+import PostDetail from '../component/PostDetail/PostDetail'
+import {Link} from 'react-router-dom'
 
 
 
@@ -27,7 +29,7 @@ componentDidMount() {
     const getAuthor = axios.get(`http://msp.salekhard.org/wp-json/wp/v2/users/${author}`);
 
     Promise.all([getImageUrl, getAuthor]).then (res => {
-        console.log(res)
+        
         this.setState({
             imgUrl: res[0].data.media_details.sizes.medium.source_url,
             author: res[1].data.name,
@@ -37,7 +39,8 @@ componentDidMount() {
 )
 }    
     render() {
-        const {title, excerpt, content} = this.props.post;
+        const {title, excerpt, content, id} = this.props.post;
+        
         
         
         return (
@@ -49,6 +52,7 @@ componentDidMount() {
                 
                 </div>
                 
+                <Link to={`/post/${id}`}>Подробнее</Link>
             </div>
         )
     }
