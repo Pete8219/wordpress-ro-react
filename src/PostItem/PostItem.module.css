@@ -1,0 +1,14 @@
+.PostItem {
+    padding: 20px;
+    width:30%;
+    height: 100vh;
+
+}
+
+.PostItem img {
+    padding: 10px;
+    padding-left: 0;
+    border: 4px solid #fff;
+    border-bottom-style: inset;
+    border-radius: 5px;
+}

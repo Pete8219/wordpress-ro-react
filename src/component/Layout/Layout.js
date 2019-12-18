@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import Navbar from '../Navbar/Navbar'
+
+import classes from './Layout.module.css'
+import  Posts from '../../Posts/Posts'
+import Footer from '../Footer/Footer'
+import SideBar from '../../component/SideBar/SideBar'
 
 const state ={
     links: [
@@ -17,9 +21,19 @@ export class Layout extends Component {
 
     render() {
         return (
-            <div>
-                <Navbar links = {state.links}/>
+            <div className={classes.Layout}>
+                
+                <Posts>
+                    {this.props.children}
+                </Posts>
+                <SideBar>
+                    {this.props.children}
+                
+                </SideBar>
+                
+                
             </div>
+            
         )
     }
 }

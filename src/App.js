@@ -1,21 +1,25 @@
 import React, { Component } from 'react'
-import Posts from './Posts/Posts'
 import Layout from './component/Layout/Layout'
+import classes from './App.module.css'
+import Navbar from './component/Navbar/Navbar'
+import Footer from './component/Footer/Footer'
 export class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className={classes.App}>
+        <Navbar/>
             <Layout>
 
-              <div className="main">
+             <div className="main">
                   {this.props.children}
-
-              </div>
+                  </div>    
+              
+              
 
             </Layout>
-        <Posts>
-           {this.props.children}
-        </Posts>
+            <Footer/>
+           
+
       </div>
     )
   }

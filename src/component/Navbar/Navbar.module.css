@@ -1,0 +1,41 @@
+.Navbar {
+    display: grid;
+height: 60px;
+background: blueviolet;
+}
+
+.NavbarList {
+   width: 1200px;
+   margin: 0 auto;
+   height:100%;
+}
+
+.NavbarList ul {
+    
+    display: flex;
+    height: 100%;
+    margin: 0;
+    margin-bottom: 0;
+    font-size: 1.2em;
+    flex-direction:row;
+    justify-content: start space-between;
+    align-items:center;
+    
+    
+}
+
+.NavbarList ul li {
+    height: 100%;
+    display: flex;
+    width:10%;
+    align-items:center;
+    
+
+  list-style:none;  
+  
+}
+
+.NavbarList a{
+   
+    color:#fff;
+}

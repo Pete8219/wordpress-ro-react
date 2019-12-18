@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import renderHTML from 'react-render-html'
 import propTypes from 'prop-types'
+import classes from './PostItem.module.css'
 
 
 
@@ -28,7 +29,7 @@ componentDidMount() {
     Promise.all([getImageUrl, getAuthor]).then (res => {
         console.log(res)
         this.setState({
-            imgUrl: res[0].data.media_details.sizes.large.source_url,
+            imgUrl: res[0].data.media_details.sizes.medium.source_url,
             author: res[1].data.name,
             loading: true
         })
@@ -40,12 +41,14 @@ componentDidMount() {
         
         
         return (
-            <div>
-                <h1>{title.rendered}</h1>
-                <div> 
-                {renderHTML(content.rendered)}
+            <div className={classes.PostItem}> 
+                <h4>{title.rendered}</h4>
                 <img src={this.state.imgUrl} alt="111"/>
+                <div> 
+                {renderHTML(excerpt.rendered)}
+                
                 </div>
+                
             </div>
         )
     }

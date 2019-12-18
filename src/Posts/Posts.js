@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import classes from './Posts.module.css'
 import PostItem from '../PostItem/PostItem'
 
 export class Posts extends Component {
@@ -29,13 +29,18 @@ export class Posts extends Component {
 
 
     render (){
-
+        console.log(this.state)
      const {posts} = this.state;
     
     
     if (posts.length) {
         return (
-            <div className="posts-container">
+            
+            <div className={classes.Posts}>
+                <div>
+            <h2>Новости</h2>
+            </div>
+                
                 {posts.map(post => (
                     <PostItem key ={post.id} post={post}/>
 
