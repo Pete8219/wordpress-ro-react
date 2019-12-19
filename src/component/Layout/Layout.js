@@ -1,35 +1,33 @@
 import React, { Component } from 'react'
-
 import classes from './Layout.module.css'
-import  Posts from '../../Posts/Posts'
 import Footer from '../Footer/Footer'
-import SideBar from '../../component/SideBar/SideBar'
+import Navbar from '../Navbar/Navbar'
+
 
 const state ={
     links: [
         {id:1, link: 'news'},
         {id:2, link: 'posts'}
     ]
-
-
 }
 
 
 export class Layout extends Component {
 
-
-
     render() {
         return (
+           
             <div className={classes.Layout}>
+                 <Navbar/>
                 
-                <Posts>
+                <main>
                     {this.props.children}
-                </Posts>
+                </main>
              
-                
+                <Footer/> 
                 
             </div>
+              
             
         )
     }

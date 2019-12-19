@@ -1,33 +1,31 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component} from 'react'
 import Layout from './component/Layout/Layout'
-import classes from './App.module.css'
-import Navbar from './component/Navbar/Navbar'
-import Footer from './component/Footer/Footer'
 import Posts from './Posts/Posts'
+import Ideas from './component/Ideas/Ideas'
+import Polls from './component/Polls/Polls'
+
 import PostDetail from './component/PostDetail/PostDetail'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 export class App extends Component {
   render() {
     return (
-      <Router>
-      <Fragment>
-        {/* <Route path='/' exact component={Posts}/> */}
+      <Layout>
+      
+      <Switch>
+      
+        <Route path='/' exact component={Posts}/> 
         <Route path='/post/:id' exact component={PostDetail}/>
-        <Navbar/>
-            <Layout>
+        <Route path='/ideas' exact component={Ideas}/>
+        <Route path='/polls' exact component={Polls}/>
+        
+            
 
-             <div className="main">
-                  {this.props.children}
-                  </div>    
-              
-              
-
-            </Layout>
-            <Footer/>
+          
            
 
-      </Fragment>
-      </Router>
+      
+      </Switch>
+      </Layout>
     )
   }
 }

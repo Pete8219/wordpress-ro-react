@@ -1,0 +1,14 @@
+.PostDetail{
+    padding:30px;
+    
+
+}
+
+
+.goBack {
+    display: grid;
+    margin: 20px;
+    justify-content: flex-end;
+    padding: 20px;
+}
+

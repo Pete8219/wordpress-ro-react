@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import classes from '../Navbar/Navbar.module.css'
+import classes from "./Footer.module.css"
 
 export class Footer extends Component {
     render() {
         return (
-            <div className={classes.Navbar}>
+            <div className={classes.Footer}>
                 Footer
             </div>
         )

@@ -1,17 +1,48 @@
 .PostItem {
-    padding: 20px;
-    width:30%;
+    padding-bottom: 1rem;
+    background: #ffffff;
+    /* padding: 20px; */
     
+    /* border-radius: 5px; */
     box-sizing: border-box;
     /*border:2px solid #ccc;*/
-    box-shadow: 0px 5px 5px rgba(0,0,0, 0.2);
+    box-shadow: 0px 2px 5px rgba(0,0,0, 0.2);
+    /*border-top:2px solid blueviolet;*/
 
 }
 
 .PostItem img {
-    padding: 10px;
+    width:100%;
+    /* padding: 10px; */
     padding-left: 0;
-    border: 4px solid #fff;
-    border-bottom-style: inset;
-    border-radius: 5px;
+ 
+}
+
+.PostItem h4 {
+    color:#f4511e;
+}
+
+.PostItem a {
+    padding: 1rem;
+    
+   /*  color:#6200ee;
+    text-transform: uppercase; */
+    
+}
+
+.PostItem a:hover {
+    text-decoration: none;
+}
+
+.Caption {
+    padding:1rem;
+    text-transform: uppercase;
+    height:3rem;
+    font-size:1rem;
+    color:#b7705a;
+    font-weight: 500;
+}
+
+.Body {
+    padding: 1rem;
 }

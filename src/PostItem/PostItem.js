@@ -3,7 +3,7 @@ import axios from 'axios'
 import renderHTML from 'react-render-html'
 import propTypes from 'prop-types'
 import classes from './PostItem.module.css'
-import PostDetail from '../component/PostDetail/PostDetail'
+
 import {Link} from 'react-router-dom'
 
 
@@ -31,7 +31,7 @@ componentDidMount() {
     Promise.all([getImageUrl, getAuthor]).then (res => {
         
         this.setState({
-            imgUrl: res[0].data.media_details.sizes.medium.source_url,
+            imgUrl: res[0].data.media_details.sizes.full.source_url,
             author: res[1].data.name,
             loading: true
         })
@@ -39,20 +39,24 @@ componentDidMount() {
 )
 }    
     render() {
-        const {title, excerpt, content, id} = this.props.post;
+        console.log(this.props)
+        const {title, excerpt, id} = this.props.post;
         
         
         
         return (
             <div className={classes.PostItem}> 
-                <h4>{title.rendered}</h4>
-                <img src={this.state.imgUrl} alt="111"/>
-                <div> 
+                <img src={this.state.imgUrl} alt={title.rendered}/>
+                <Link to={`/post/${id}`}>
+                    <p className={classes.Caption}>{title.rendered}</p>
+                </Link>    
+                
+            {/*     <div className={classes.Body}> 
                 {renderHTML(excerpt.rendered.slice(0,100) + '...')}
                 
-                </div>
+                </div> */}
                 
-                <Link to={`/post/${id}`}>Подробнее</Link>
+               {/*  <Link to={`/post/${id}`}>Подробнее</Link> */}
             </div>
         )
     }

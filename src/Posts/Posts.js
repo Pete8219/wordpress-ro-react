@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import classes from './Posts.module.css'
 import PostItem from '../PostItem/PostItem'
+import Loader from '../UI/Loader/Loader'
 
 export class Posts extends Component {
     constructor( props ){
@@ -37,9 +38,7 @@ export class Posts extends Component {
         return (
             
             <div className={classes.Posts}>
-                <div>
-            
-            </div>
+               
                 
                 {posts.map(post => (
                     <PostItem key ={post.id} post={post}/>
@@ -50,7 +49,7 @@ export class Posts extends Component {
             </div>
         )
     }
-    return  <h3>Loading ...</h3>
+    return <Loader/>
     
 
 
