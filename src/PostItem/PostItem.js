@@ -48,13 +48,13 @@ componentDidMount() {
             <div className={classes.PostItem}> 
                 <img src={this.state.imgUrl} alt={title.rendered}/>
                 <Link to={`/post/${id}`}>
-                    <p className={classes.Caption}>{title.rendered}</p>
+                    <h2 className={classes.Caption}>{title.rendered}</h2>
                 </Link>    
                 
-            {/*     <div className={classes.Body}> 
-                {renderHTML(excerpt.rendered.slice(0,100) + '...')}
+                <div className={classes.Body}> 
+                {renderHTML(excerpt.rendered.slice(0,155) + '...')}
                 
-                </div> */}
+                </div> 
                 
                {/*  <Link to={`/post/${id}`}>Подробнее</Link> */}
             </div>

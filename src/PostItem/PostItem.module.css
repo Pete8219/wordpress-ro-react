@@ -1,25 +1,33 @@
 .PostItem {
     padding-bottom: 1rem;
     background: #ffffff;
-    /* padding: 20px; */
+     padding: 20px; 
     
     /* border-radius: 5px; */
     box-sizing: border-box;
     /*border:2px solid #ccc;*/
-    box-shadow: 0px 2px 5px rgba(0,0,0, 0.2);
+    box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.06)
     /*border-top:2px solid blueviolet;*/
 
 }
 
 .PostItem img {
     width:100%;
-    /* padding: 10px; */
+    /* padding: 10px */;
     padding-left: 0;
  
 }
 
 .PostItem h4 {
     color:#f4511e;
+}
+
+.PostItem h2 {
+    font-size: 20px;
+    color:#222;
+    /* text-transform: capitalize; */
+    font-weight: normal;
+    line-height: 24px;
 }
 
 .PostItem a {
@@ -35,14 +43,14 @@
 }
 
 .Caption {
-    padding:1rem;
-    text-transform: uppercase;
+   /*  padding:1rem;
+    text-transform: uppercase; */
     height:3rem;
-    font-size:1rem;
+/*     font-size:1rem;
     color:#b7705a;
-    font-weight: 500;
+    font-weight: 500; */
 }
 
 .Body {
-    padding: 1rem;
+    /* padding: 1rem; */
 }
